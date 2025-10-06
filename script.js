@@ -119,4 +119,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initGalaxy();
+
+    // --- Video Modal Functionality ---
+    const videoModal = document.getElementById('video-modal');
+    const closeVideo = document.getElementById('close-video');
+    const demoVideo = document.getElementById('demo-video');
+    const demoSource = demoVideo.querySelector('source');
+
+    function openVideoWithSrc(src) {
+        if (demoVideo) {
+            demoVideo.pause();
+            demoVideo.currentTime = 0;
+        }
+        if (demoSource) {
+            demoSource.src = src;
+        }
+        demoVideo.load();
+
+        videoModal.classList.remove('hidden');
+        videoModal.style.opacity = '0';
+        requestAnimationFrame(() => {
+            videoModal.style.transition = 'opacity 0.3s ease-in';
+            videoModal.style.opacity = '1';
+        });
+        demoVideo.play();
+    }
+
+    // Bind all Live Demo buttons
+    document.querySelectorAll('.live-demo').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const src = btn.getAttribute('data-video');
+            if (src) openVideoWithSrc(src);
+        });
+    });
+
+    // Close video modal
+    closeVideo.addEventListener('click', () => {
+        videoModal.style.transition = 'opacity 0.3s ease-out';
+        videoModal.style.opacity = '0';
+        demoVideo.pause();
+        demoVideo.currentTime = 0;
+        setTimeout(() => {
+            videoModal.classList.add('hidden');
+        }, 300);
+    });
+
+    // Close modal when clicking outside the video
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            closeVideo.click();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+            closeVideo.click();
+        }
+    });
 });
