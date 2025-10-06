@@ -30,6 +30,40 @@ body {
 .project-card:hover .project-overlay {
     opacity: 1;
 }
+.project-card {
+    transform: translateZ(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+.project-overlay {
+    pointer-events: none;
+}
+.overlay-actions {
+    pointer-events: auto;
+}
+.overlay-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #cbd5e1;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+.overlay-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Responsive 2-column behavior is handled by Tailwind utility classes in HTML */
 .skill-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
