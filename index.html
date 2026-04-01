@@ -67,7 +67,7 @@
                         <p class="text-lg text-gray-300 leading-relaxed mb-6 font-light">
                             I am a passionate and driven computer science student with a strong foundation in web development, artificial intelligence, and cloud technologies. I thrive on solving complex problems and am dedicated to building innovative and efficient solutions. My goal is to leverage my skills to contribute to impactful projects and continuously grow as a technology professional.
                         </p>
-                        <a href="assets/certificate/lakshmi%20s%20kolhar%20resume.pdf" class="inline-block px-8 py-3 font-semibold uppercase tracking-wider border-2 border-blue-400 text-blue-300 rounded-full transition-all duration-300 hover:bg-blue-400 hover:text-black hover:shadow-lg hover:shadow-blue-400/50">
+                        <a href="assets/certificate/CV.pdf" class="inline-block px-8 py-3 font-semibold uppercase tracking-wider border-2 border-blue-400 text-blue-300 rounded-full transition-all duration-300 hover:bg-blue-400 hover:text-black hover:shadow-lg hover:shadow-blue-400/50">
                             Download Resume
                         </a>
                     </div>
@@ -113,17 +113,6 @@
                             <li>Computer Vision</li>
                         </ul>
                     </div>
-                    <!-- Cloud -->
-                    <div class="skill-card glass-effect rounded-lg p-6 text-center border-yellow-500/50 border">
-                        <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Cloud</h3>
-                        <ul class="space-y-2 text-gray-300 font-light">
-                            <li>Amazon Web Services (AWS)</li>
-                            <li>Google Cloud Platform (GCP)</li>
-                            <li>Docker</li>
-                            <li>CI/CD Pipelines</li>
-                            <li>Serverless Architecture</li>
-                        </ul>
-                    </div>
                 </div>
             </section>
 
@@ -132,6 +121,23 @@
                 <h2 class="text-4xl font-bold text-white text-center mb-12">My Projects</h2>
                 <div id="projects-grid" class="grid grid-cols-12 gap-8">
                     <!-- Project Cards -->
+                     <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6" 
+                         data-title="Freshlyy" 
+                         data-desc="An e-commerce platform for fresh produce with a seamless payment workflow using the Omniware (JSecurePay) gateway."
+                         data-github="https://github.com/lskolhar/freshlyy"
+                         data-video="assets/screen%20recordings/%5Bss%5D%20freshlyy.mp4">
+                        <img src="https://placehold.co/1200x600/1a202c/718096?text=Freshlyy" alt="Freshlyy Project" class="w-full h-56 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/1200x600/1a202c/718096?text=Freshlyy';">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-200">Freshlyy</h3>
+                            <p class="mt-2 text-gray-400 font-light">I developed a Laravel-based e-commerce system where I implemented a complete payment workflow using the Omniware (JSecurePay) gateway. This included order creation, backend signature generation, and secure payment verification.</p>
+                        </div>
+                        <div class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
+                            <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
+                                <a class="overlay-btn github-link" href="https://github.com/lskolhar/freshlyy" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">↗</a>
+                                <button class="overlay-btn play-demo" aria-label="Play Demo">▶</button>
+                            </div>
+                        </div>
+                    </div>
                     <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6" 
                          data-title="TrackWise" 
                          data-desc="A comprehensive project tracking and management system with real-time updates and team collaboration features."
@@ -216,7 +222,20 @@
                 <div class="max-w-5xl space-y-8 relative">
                     <!-- Vertical Line -->
                     <div class="absolute left-4 top-0 h-full w-0.5 bg-blue-400/50"></div>
-                    
+                    <div class="pl-12 relative">
+                        <div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-blue-300 border-2 border-black -translate-x-1/2"></div>
+                        <div class="flex items-start space-x-4">
+                            <img src="assets/logo/omniware.png" alt="Kredo Analytics Logo" class="w-12 h-12 rounded-md object-contain bg-white/10 p-1" onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/1a202c?text=KREDO';">
+                            <div class="flex-grow">
+                                <h3 class="text-2xl font-bold text-blue-300">Offline</h3>
+                                <p class="text-lg font-semibold text-white">Omniware technologies pvt ltd</p>
+                                <p class="text-sm text-gray-400 mb-2 font-light">I developed a Laravel-based e-commerce system where I implemented a complete payment workflow using the Omniware (JSecurePay) gateway. This included order creation, backend signature generation, and secure payment verification.</p>
+                                <a href="" target="_blank" class="inline-block mt-2 px-3 py-1 text-xs font-semibold border border-purple-400 text-purple-300 rounded-full hover:bg-purple-400 hover:text-black transition-colors">
+                                    currently working here
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Experience 1 -->
                     <div class="pl-12 relative">
                         <div class="absolute left-4 top-1 w-4 h-4 rounded-full bg-blue-300 border-2 border-black -translate-x-1/2"></div>
