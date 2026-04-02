@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             portfolioPage.classList.add('hidden');
             landingPage.classList.remove('hidden');
             landingPage.style.opacity = '0';
-             requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
                 landingPage.style.transition = 'opacity 0.5s ease-in';
                 landingPage.style.opacity = '1';
             });
@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
-    
+
     // --- Landing Page Hover Effect ---
     const title = document.getElementById('main-title');
     landingPage.addEventListener('mousemove', (e) => {
         const { clientX, clientY } = e;
         const { innerWidth, innerHeight } = window;
-        
+
         const xRotation = (clientY / innerHeight - 0.5) * -20;
         const yRotation = (clientX / innerWidth - 0.5) * 20;
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             positions[i] = (Math.random() - 0.5) * 600;
         }
         starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-        
+
         let sprite = new THREE.TextureLoader().load('https://placehold.co/16x16/ffffff/ffffff.png'); // Simple white dot
         let starMaterial = new THREE.PointsMaterial({
             color: 0xaaaaaa,
@@ -308,6 +308,150 @@ document.addEventListener('DOMContentLoaded', () => {
                 // fallback: use a placeholder clip or keep modal closed
                 console.warn('No demo video found for project');
             }
+        });
+    });
+
+    // --- AI Chatbot Assistant Logic ---
+    const chatToggleBtn = document.getElementById('chatbot-toggle');
+    const chatWindow = document.getElementById('chat-window');
+    const closeChatBtn = document.getElementById('close-chat');
+    const chatHistory = document.getElementById('chat-history');
+    const chatInput = document.getElementById('chat-input');
+    const sendChatBtn = document.getElementById('send-chat');
+
+    let chatOpen = false;
+
+    // Chatbot Knowledge Base
+    const botKnowledge = [
+        {
+            keywords: ['experience', 'work', 'job', 'internship', 'omniware', 'kredo', 'latest'],
+            response: "Lakshmi is currently working at Omniware Technologies, where she built a Laravel e-commerce system with the JSecurePay gateway! Previously, she interned at Kredo Analytics developing full-stack features using PHP, Laravel, and AI models."
+        },
+        {
+            keywords: ['skills', 'technologies', 'stack', 'frontend', 'backend', 'language'],
+            response: "Her tech stack is highly versatile! For Backend: Laravel, Node.js, Python, and MySQL. For Frontend: React, Tailwind CSS, JS. She's also very experienced in AI & ML, specifically with NLP, LLMs, and Python. Want to know more about a specific skill?"
+        },
+        {
+            keywords: ['projects', 'portfolio', 'built', 'freshlyy', 'trackwise', 'repobrief', 'summarize'],
+            response: "Lakshmi has built several impressive projects! Some highlights include 'Freshlyy' (a Laravel e-commerce platform), 'TrackWise' (a management system), and AI-integrations like 'RepoBrief'. Feel free to check the Projects section to watch the live demos!"
+        },
+        {
+            keywords: ['contact', 'hire', 'email', 'linkedin', 'reach', 'message'],
+            response: "You can easily reach Lakshmi via email at lskolhar@gmail.com, or through her LinkedIn profile! Just scroll to the 'Get In Touch' section at the bottom of the page."
+        },
+        {
+            keywords: ['education', 'study', 'student', 'college', 'degree'],
+            response: "Lakshmi is an aspiring Computer Science student with a strong passion for web development, AI, and cloud technologies. She actively holds leadership roles like Department Coordinator at Vertechx."
+        },
+        {
+            keywords: ['ai', 'machine learning', 'ml', 'nlp', 'llama', 'model'],
+            response: "Lakshmi is an AI Enthusiast! Her AI/ML skills include Python, Machine Learning models (Naive Bayes, TF-IDF), NLP text classification, and integrating LLMs like Gemini and LLaMA 3 via APIs."
+        }
+    ];
+
+    function toggleChat() {
+        chatOpen = !chatOpen;
+        if (chatOpen) {
+            chatWindow.classList.remove('hidden');
+            setTimeout(() => {
+                chatWindow.classList.remove('scale-95', 'opacity-0');
+                chatWindow.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        } else {
+            chatWindow.classList.remove('scale-100', 'opacity-100');
+            chatWindow.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                chatWindow.classList.add('hidden');
+            }, 300);
+        }
+    }
+
+    if (chatToggleBtn && closeChatBtn) {
+        chatToggleBtn.addEventListener('click', toggleChat);
+        closeChatBtn.addEventListener('click', toggleChat);
+    }
+
+    function appendMessage(sender, text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = sender === 'user' ? 'flex items-end justify-end' : 'flex items-start';
+
+        const bubble = document.createElement('div');
+        if (sender === 'user') {
+            bubble.className = 'bg-gray-700/80 border border-gray-600/50 text-white text-sm rounded-lg rounded-tr-none px-4 py-2 max-w-[85%] shadow-md';
+        } else {
+            bubble.className = 'bg-blue-600/30 border border-blue-500/30 text-gray-200 text-sm rounded-lg rounded-tl-none px-4 py-2 max-w-[85%] mt-2 shadow-md';
+        }
+        bubble.textContent = text;
+        msgDiv.appendChild(bubble);
+
+        chatHistory.appendChild(msgDiv);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    }
+
+    function generateBotResponse(userMsg) {
+        const lowerMsg = userMsg.toLowerCase();
+
+        let bestMatch = null;
+        let maxMatchCount = 0;
+
+        botKnowledge.forEach(kb => {
+            let matches = 0;
+            kb.keywords.forEach(kw => {
+                if (lowerMsg.includes(kw)) matches++;
+            });
+            if (matches > maxMatchCount) {
+                maxMatchCount = matches;
+                bestMatch = kb.response;
+            }
+        });
+
+        if (!bestMatch) {
+            bestMatch = "That's an interesting question! Lakshmi's focus is on Full-Stack Development and AI. If you'd like precise details, feel free to drop an email in the Contact section!";
+            if (lowerMsg.includes("hello") || lowerMsg.includes("hi") || lowerMsg.includes("hey")) {
+                bestMatch = "Hello there! How can I help you learn more about Lakshmi's portfolio today?";
+            }
+        }
+
+        // Simulate typing delay
+        const typingIndicator = document.createElement('div');
+        typingIndicator.id = 'typing-indicator';
+        typingIndicator.className = 'flex items-start mt-2';
+        typingIndicator.innerHTML = `<div class="bg-blue-600/30 border border-blue-500/30 text-gray-200 text-sm rounded-lg rounded-tl-none px-4 py-3 flex items-center space-x-1.5 shadow-md"><div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></div><div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div><div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div></div>`;
+        chatHistory.appendChild(typingIndicator);
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+
+        setTimeout(() => {
+            if (document.getElementById('typing-indicator')) {
+                document.getElementById('typing-indicator').remove();
+            }
+            appendMessage('bot', bestMatch);
+        }, 1200);
+    }
+
+    function handleChatSubmit() {
+        const msg = chatInput.value.trim();
+        if (!msg) return;
+
+        appendMessage('user', msg);
+        chatInput.value = '';
+        generateBotResponse(msg);
+    }
+
+    if (sendChatBtn && chatInput) {
+        sendChatBtn.addEventListener('click', handleChatSubmit);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleChatSubmit();
+        });
+    }
+
+    // Quick option chips
+    document.querySelectorAll('.chat-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            const quickOptions = document.getElementById('quick-options');
+            if (quickOptions) quickOptions.style.display = 'none'; // hide chips once clicked
+            const txt = chip.textContent.replace('✨', '').replace('💡', '').replace('🚀', '').trim();
+            appendMessage('user', txt);
+            generateBotResponse(txt);
         });
     });
 });
