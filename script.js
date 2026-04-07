@@ -120,62 +120,119 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initGalaxy();
 
-    // --- Video Modal Functionality ---
+    // --- Dynamic Modal Functionality ---
     const videoModal = document.getElementById('video-modal');
     const closeVideo = document.getElementById('close-video');
-    const demoVideo = document.getElementById('demo-video');
-    const demoSource = demoVideo.querySelector('source');
+    const modalContainer = document.getElementById('modal-container');
+    
+    // Store original video element
+    const originalVideoElement = modalContainer ? modalContainer.innerHTML : '';
 
-    function openVideoWithSrc(src) {
-        if (demoVideo) {
-            demoVideo.pause();
-            demoVideo.currentTime = 0;
-        }
-        if (demoSource) {
-            demoSource.src = src;
-        }
-        demoVideo.load();
-
+    function openModalWithContent(contentHtml) {
+        if (!modalContainer) return;
+        modalContainer.innerHTML = contentHtml;
         videoModal.classList.remove('hidden');
         videoModal.style.opacity = '0';
         requestAnimationFrame(() => {
             videoModal.style.transition = 'opacity 0.3s ease-in';
             videoModal.style.opacity = '1';
         });
-        demoVideo.play();
     }
 
-    // Bind all Live Demo buttons
-    document.querySelectorAll('.live-demo').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            const src = btn.getAttribute('data-video');
-            if (src) openVideoWithSrc(src);
+    function openModalWithVideo(src) {
+        if (!modalContainer) return;
+        modalContainer.innerHTML = originalVideoElement;
+        const demoVideo = document.getElementById('demo-video');
+        const demoSource = demoVideo.querySelector('source');
+        
+        if (demoVideo && demoSource) {
+            demoSource.src = src;
+            demoVideo.load();
+            demoVideo.play();
+        }
+        
+        videoModal.classList.remove('hidden');
+        videoModal.style.opacity = '0';
+        requestAnimationFrame(() => {
+            videoModal.style.transition = 'opacity 0.3s ease-in';
+            videoModal.style.opacity = '1';
+        });
+    }
+
+    // Bind Summary buttons
+    document.querySelectorAll('.view-summary').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.project-card');
+            const title = card?.getAttribute('data-title') || 'Project Summary';
+            const summary = card?.getAttribute('data-summary') || 'No summary provided.';
+            
+            const html = `
+                <div class="p-8 bg-gray-900 border border-blue-500/30 rounded-lg max-h-[80vh] overflow-y-auto w-full md:min-w-[600px]">
+                    <h2 class="text-3xl font-bold text-white mb-4">${title} <span class="text-blue-400 opacity-70 text-2xl">- Summary</span></h2>
+                    <p class="text-lg text-gray-300 font-light leading-relaxed">${summary}</p>
+                </div>
+            `;
+            openModalWithContent(html);
         });
     });
 
-    // Close video modal
-    closeVideo.addEventListener('click', () => {
+    // Bind Technologies buttons
+    document.querySelectorAll('.view-tech').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.project-card');
+            const title = card?.getAttribute('data-title') || 'Project';
+            const techStr = card?.getAttribute('data-tech') || 'No technologies listed.';
+            
+            const techs = techStr.split(',').map(t => `<span class="px-4 py-2 bg-blue-900/40 text-blue-300 text-sm font-semibold rounded-full border border-blue-500/30 shadow-sm">${t.trim()}</span>`).join('');
+
+            const html = `
+                <div class="p-8 bg-gray-900 border border-blue-500/30 rounded-lg max-h-[80vh] overflow-y-auto w-full md:min-w-[600px]">
+                    <h2 class="text-3xl font-bold text-white mb-6">${title} <span class="text-blue-400 opacity-70 text-2xl">- Technologies</span></h2>
+                    <div class="flex flex-wrap gap-3">
+                        ${techs}
+                    </div>
+                </div>
+            `;
+            openModalWithContent(html);
+        });
+    });
+
+    // Bind Video buttons
+    document.querySelectorAll('.play-demo').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.project-card');
+            const src = card?.getAttribute('data-video');
+            if (src) {
+                openModalWithVideo(src);
+            }
+        });
+    });
+
+    function closeModal() {
         videoModal.style.transition = 'opacity 0.3s ease-out';
         videoModal.style.opacity = '0';
-        demoVideo.pause();
-        demoVideo.currentTime = 0;
+        
+        const demoVideo = document.getElementById('demo-video');
+        if (demoVideo) {
+            demoVideo.pause();
+            demoVideo.currentTime = 0;
+        }
+        
         setTimeout(() => {
             videoModal.classList.add('hidden');
         }, 300);
-    });
+    }
 
-    // Close modal when clicking outside the video
+    // Close modal
+    closeVideo.addEventListener('click', closeModal);
     videoModal.addEventListener('click', (e) => {
-        if (e.target === videoModal) {
-            closeVideo.click();
-        }
+        if (e.target === videoModal) closeModal();
     });
-
-    // Close modal with Escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
-            closeVideo.click();
-        }
+        if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) closeModal();
     });
 
     // --- Contact form handler ---
@@ -210,106 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Projects: Show more/less & expand modal ---
-    const projectsGrid = document.getElementById('projects-grid');
-    const toggleProjectsBtn = document.getElementById('toggle-projects');
-
-    if (projectsGrid && toggleProjectsBtn) {
-        const extraProjects = Array.from(projectsGrid.querySelectorAll('.extra-project'));
-        let expanded = false;
-
-        function updateToggleButton() {
-            toggleProjectsBtn.textContent = expanded ? 'Show less' : 'Show more';
-        }
-
-        function setProjectsVisibility() {
-            extraProjects.forEach(card => {
-                card.style.display = expanded ? '' : 'none';
-            });
-        }
-
-        // initialize collapsed
-        setProjectsVisibility();
-        updateToggleButton();
-
-        toggleProjectsBtn.addEventListener('click', () => {
-            expanded = !expanded;
-            setProjectsVisibility();
-            updateToggleButton();
-        });
-    }
-
-    // Expand modal using existing video modal container as a simple content modal
-    document.querySelectorAll('.expand-project').forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const card = btn.closest('.project-card');
-            const title = card?.getAttribute('data-title') || 'Project';
-            const desc = card?.getAttribute('data-desc') || '';
-            const github = card?.getAttribute('data-github') || '#';
-
-            // replace video content with text temporarily
-            if (demoVideo) {
-                demoVideo.pause();
-            }
-            const modalContent = document.createElement('div');
-            modalContent.className = 'p-6 text-gray-200';
-            modalContent.innerHTML = `
-                <h3 class="text-2xl font-bold mb-2">${title}</h3>
-                <p class="text-gray-300 mb-4">${desc}</p>
-                <a class="inline-block px-4 py-2 border border-blue-400 rounded text-blue-300 hover:bg-blue-400 hover:text-black transition-colors" target="_blank" rel="noopener noreferrer" href="${github}">Open GitHub</a>
-            `;
-
-            const container = videoModal.querySelector('.relative.bg-black.rounded-lg.overflow-hidden');
-            const original = container.firstElementChild;
-
-            // swap
-            container.replaceChild(modalContent, original);
-            videoModal.classList.remove('hidden');
-            videoModal.style.opacity = '0';
-            requestAnimationFrame(() => {
-                videoModal.style.transition = 'opacity 0.3s ease-in';
-                videoModal.style.opacity = '1';
-            });
-
-            // restore on close
-            const restore = () => {
-                if (container.firstElementChild === modalContent) {
-                    container.replaceChild(original, modalContent);
-                }
-            };
-            const handleClose = () => {
-                restore();
-                closeVideo.removeEventListener('click', handleClose);
-                document.removeEventListener('keydown', escHandler);
-                videoModal.removeEventListener('click', outsideHandler);
-            };
-            const escHandler = (ev) => {
-                if (ev.key === 'Escape') handleClose();
-            };
-            const outsideHandler = (ev) => {
-                if (ev.target === videoModal) handleClose();
-            };
-            closeVideo.addEventListener('click', handleClose);
-            document.addEventListener('keydown', escHandler);
-            videoModal.addEventListener('click', outsideHandler);
-        });
-    });
-
-    // Wire play-demo buttons to open the project's demo video
-    document.querySelectorAll('.play-demo').forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const card = btn.closest('.project-card');
-            const src = card?.getAttribute('data-video');
-            if (src) {
-                openVideoWithSrc(src);
-            } else {
-                // fallback: use a placeholder clip or keep modal closed
-                console.warn('No demo video found for project');
-            }
-        });
-    });
+    // (Old expand-project handlers and show/more toggles removed)
 
     // --- AI Chatbot Assistant Logic ---
     const chatToggleBtn = document.getElementById('chatbot-toggle');

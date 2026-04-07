@@ -139,122 +139,174 @@
             <!-- Projects Section -->
             <section id="projects" class="py-24 md:py-32">
                 <h2 class="text-4xl font-bold text-white text-center mb-12">My Projects</h2>
-                <div id="projects-grid" class="grid grid-cols-12 gap-8">
-                    <!-- Project Cards -->
-                    <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6"
-                        data-title="Freshlyy"
-                        data-desc="An e-commerce platform for fresh produce with a seamless payment workflow using the Omniware (JSecurePay) gateway."
-                        data-github="https://github.com/lskolhar/freshlyy"
-                        data-video="assets/compressed_screen_recordings/%5Bss%5D%20freshlyy.mp4">
-                        <video src="assets/compressed_screen_recordings/%5Bss%5D%20freshlyy.mp4" autoplay loop muted
-                            playsinline class="w-full h-56 object-cover"></video>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-200">Freshlyy</h3>
-                            <p class="mt-2 text-gray-400 font-light">An e-commerce platform for fresh produce with a
-                                seamless payment workflow using the Omniware (JSecurePay) gateway.</p>
-                        </div>
-                        <div
-                            class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
-                            <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
-                                <a class="overlay-btn github-link" href="https://github.com/lskolhar/freshlyy"
-                                    target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">↗</a>
-                                <button class="overlay-btn play-demo" aria-label="Play Demo">▶</button>
+                <!-- Solo Projects -->
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-blue-400 mb-8 border-b border-blue-500/30 pb-3">Solo Projects</h3>
+                    <div class="grid grid-cols-12 gap-8">
+                        <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6"
+                            data-title="Freshlyy"
+                            data-summary="I developed an e-commerce platform called Freshlyy using the Laravel framework (PHP), where users can purchase dairy products, fresh vegetables, fruits, and meat. The application follows a clean role-based architecture with a single layout and shared routes, where both users and admins interact with the same pages but with different permissions and UI controls. I implemented core features like product listing by category, cart functionality, and order management, along with secure backend logic for admin actions such as adding, editing, and deleting products. The project uses SQLite as the database (managed via TablePlus) and runs on the Herd server. Additionally, I integrated the Omniware (JSecurePay) payment gateway, handling order creation, secure hash generation, and payment status verification to ensure reliable transactions."
+                            data-tech="Laravel, MySQL, Omniware API, PHP," data-github="https://github.com/lskolhar/freshlyy"
+                            data-video="assets/compressed_screen_recordings/%5Bss%5D%20freshlyy.mp4">
+                            <video src="assets/compressed_screen_recordings/%5Bss%5D%20freshlyy.mp4" autoplay loop muted
+                                playsinline class="w-full h-56 object-cover"></video>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-200">Freshlyy</h3>
+                                <p class="mt-2 text-gray-400 font-light">An e-commerce platform for fresh produce with a
+                                    seamless payment workflow using the Omniware (JSecurePay) gateway.</p>
+                            </div>
+                            <div
+                                class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
+                                <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
+                                    <button
+                                        class="overlay-btn view-summary bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Summary" title="Summary">📝</button>
+                                    <button
+                                        class="overlay-btn view-tech bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Technologies" title="Technologies Used">💻</button>
+                                    <button
+                                        class="overlay-btn play-demo bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="Play Demo" title="Play Video">▶</button>
+                                    <a class="overlay-btn github-link bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        href="https://github.com/lskolhar/freshlyy" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Open GitHub" title="GitHub">↗</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6"
-                        data-title="TrackWise"
-                        data-desc="A comprehensive project tracking and management system with real-time updates and team collaboration features."
-                        data-github="https://github.com/lskolhar/trackwise"
-                        data-video="assets/compressed_screen_recordings/%5Bss%5D%20trackwise.mp4">
-                        <video src="assets/compressed_screen_recordings/%5Bss%5D%20trackwise.mp4" autoplay loop muted
-                            playsinline class="w-full h-56 object-cover"></video>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-200">TrackWise</h3>
-                            <p class="mt-2 text-gray-400 font-light">A comprehensive project tracking and management
-                                system with real-time updates and team collaboration features.</p>
-                        </div>
-                        <div
-                            class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
-                            <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
-                                <a class="overlay-btn github-link" href="https://github.com/lskolhar/trackwise"
-                                    target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">↗</a>
-                                <button class="overlay-btn play-demo" aria-label="Play Demo">▶</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6 extra-project"
-                        data-title="RepoBrief"
-                        data-desc="An intelligent GitHub repository analyzer that provides detailed insights and summaries of code repositories."
-                        data-github="https://github.com/lskolhar/Repobrief.git"
-                        data-video="assets/compressed_screen_recordings/%5Bss%5D%20repobrief.mp4">
-                        <video src="assets/compressed_screen_recordings/%5Bss%5D%20repobrief.mp4" autoplay loop muted
-                            playsinline class="w-full h-56 object-cover"></video>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-200">RepoBrief</h3>
-                            <p class="mt-2 text-gray-400 font-light">An intelligent GitHub repository analyzer that
-                                provides detailed insights and summaries of code repositories.</p>
-                        </div>
-                        <div
-                            class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
-                            <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
-                                <a class="overlay-btn github-link" href="https://github.com/lskolhar/Repobrief.git"
-                                    target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">↗</a>
-                                <button class="overlay-btn play-demo" aria-label="Play Demo">▶</button>
+                        <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6"
+                            data-title="Book Review System"
+                            data-summary="Built a full-stack Book Review Platform using the MERN stack (MongoDB, Express.js, React, Node.js), enabling users to explore, add, and review books. Implemented secure authentication using JWT and bcrypt, along with protected routes for authorized actions. Developed complete CRUD functionality for books and reviews, including pagination and average rating calculation. Designed a responsive frontend using React with seamless API integration following an MVC architecture on the backend."
+                            data-tech="Python, Machine Learning, Tailwind CSS"
+                            data-github="https://github.com/lskolhar/book-review"
+                            data-video="assets/compressed_screen_recordings/%5Bss%5D%20book%20review.mp4">
+                            <video src="assets/compressed_screen_recordings/%5Bss%5D%20book%20review.mp4" autoplay loop
+                                muted playsinline class="w-full h-56 object-cover"></video>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-200">Book Review System</h3>
+                                <p class="mt-2 text-gray-400 font-light">A platform for book enthusiasts to share reviews,
+                                    ratings, and discover new books with AI-powered recommendations.</p>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6 extra-project"
-                        data-title="ComplainHub"
-                        data-desc="A centralized complaint management system for organizations to efficiently handle and track customer grievances."
-                        data-github="https://github.com/lskolhar/complain_hub.git"
-                        data-video="assets/compressed_screen_recordings/%5Bss%5D%20complainhub.mp4">
-                        <video src="assets/compressed_screen_recordings/%5Bss%5D%20complainhub.mp4" autoplay loop muted
-                            playsinline class="w-full h-56 object-cover"></video>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-200">ComplainHub</h3>
-                            <p class="mt-2 text-gray-400 font-light">A centralized complaint management system for
-                                organizations to efficiently handle and track customer grievances.</p>
-                        </div>
-                        <div
-                            class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
-                            <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
-                                <a class="overlay-btn github-link" href="https://github.com/lskolhar/complain_hub.git"
-                                    target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">↗</a>
-                                <button class="overlay-btn play-demo" aria-label="Play Demo">▶</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6 extra-project"
-                        data-title="Book Review System"
-                        data-desc="A platform for book enthusiasts to share reviews, ratings, and discover new books with AI-powered recommendations."
-                        data-github="https://github.com/lskolhar/book-review"
-                        data-video="assets/compressed_screen_recordings/%5Bss%5D%20book%20review.mp4">
-                        <video src="assets/compressed_screen_recordings/%5Bss%5D%20book%20review.mp4" autoplay loop
-                            muted playsinline class="w-full h-56 object-cover"></video>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-200">Book Review System</h3>
-                            <p class="mt-2 text-gray-400 font-light">A platform for book enthusiasts to share reviews,
-                                ratings, and discover new books with AI-powered recommendations.</p>
-                        </div>
-                        <div
-                            class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
-                            <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
-                                <a class="overlay-btn github-link" href="https://github.com/lskolhar/book-review"
-                                    target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">↗</a>
-                                <button class="overlay-btn play-demo" aria-label="Play Demo">▶</button>
+                            <div
+                                class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
+                                <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
+                                    <button
+                                        class="overlay-btn view-summary bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Summary" title="Summary">📝</button>
+                                    <button
+                                        class="overlay-btn view-tech bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Technologies" title="Technologies Used">💻</button>
+                                    <button
+                                        class="overlay-btn play-demo bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="Play Demo" title="Play Video">▶</button>
+                                    <a class="overlay-btn github-link bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        href="https://github.com/lskolhar/book-review" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Open GitHub" title="GitHub">↗</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-10 flex justify-center">
-                    <button id="toggle-projects"
-                        class="px-6 py-2 font-semibold border border-blue-400 text-blue-300 rounded-full hover:bg-blue-400 hover:text-black transition-colors">Show
-                        more</button>
+                <!-- Group Projects -->
+                <div>
+                    <h3 class="text-3xl font-semibold text-blue-400 mb-8 border-b border-blue-500/30 pb-3">Group Projects</h3>
+                    <div class="grid grid-cols-12 gap-8">
+                        <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6"
+                            data-title="TrackWise"
+                            data-summary="TrackWise is an AI-driven railway management system designed to improve railway safety and operational efficiency. The system uses machine learning models such as Echo State Networks (ESN) to predict train movements and a Graph Diffusion Model (GDM) to analyze risk propagation across railway tracks. By combining train data like speed, location, and direction, the AI module calculates a real-time collision risk score and generates alerts to prevent accidents. The platform also integrates AI-based station monitoring, passenger data, and IoT inputs to support predictive decision-making. This AI-enabled approach helps improve safety, optimize railway operations, and enhance passenger management."
+                            data-tech="Python, Machine Learning, ESN, GDM, IoT, AI, Chatbot, API Integration"
+                            data-github="https://github.com/lskolhar/trackwise"
+                            data-video="assets/compressed_screen_recordings/%5Bss%5D%20trackwise.mp4">
+                            <video src="assets/compressed_screen_recordings/%5Bss%5D%20trackwise.mp4" autoplay loop muted
+                                playsinline class="w-full h-56 object-cover"></video>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-200">TrackWise</h3>
+                                <p class="mt-2 text-gray-400 font-light">An AI-driven railway management system using
+                                    machine learning (ESN & GDM) for real-time safety prediction.</p>
+                            </div>
+                            <div
+                                class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
+                                <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
+                                    <button
+                                        class="overlay-btn view-summary bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Summary" title="Summary">📝</button>
+                                    <button
+                                        class="overlay-btn view-tech bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Technologies" title="Technologies Used">💻</button>
+                                    <button
+                                        class="overlay-btn play-demo bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="Play Demo" title="Play Video">▶</button>
+                                    <a class="overlay-btn github-link bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        href="https://github.com/lskolhar/trackwise" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Open GitHub" title="GitHub">↗</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6"
+                            data-title="ComplainHub"
+                            data-summary="ComplaintHub is a web-based platform developed using React (Frontend) and Firebase (Backend) to manage student complaints efficiently. The system stores complaint data and user details in Firebase. It integrates a machine learning model that predicts the priority of complaints using NLP techniques. The model uses TF-IDF Vectorizer and Naive Bayes classification, trained on custom complaint data collected from students. Complaints are categorized into High (Academic), Medium (Cleanliness), and Low (Unnecessary) priorities. Students can register, submit complaints, and track progress, while admins can manage complaints, upload proofs, and handle student accounts."
+                            data-tech="React, Firebase, Machine Learning, NLP, TF-IDF Vectorizer, Naive Bayes classification"
+                            data-github="https://github.com/lskolhar/complain_hub.git"
+                            data-video="assets/compressed_screen_recordings/%5Bss%5D%20complainhub.mp4">
+                            <video src="assets/compressed_screen_recordings/%5Bss%5D%20complainhub.mp4" autoplay loop muted
+                                playsinline class="w-full h-56 object-cover"></video>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-200">ComplainHub</h3>
+                                <p class="mt-2 text-gray-400 font-light">A centralized complaint management system for
+                                    organizations to efficiently handle and track customer grievances.</p>
+                            </div>
+                            <div
+                                class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
+                                <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
+                                    <button
+                                        class="overlay-btn view-summary bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Summary" title="Summary">📝</button>
+                                    <button
+                                        class="overlay-btn view-tech bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Technologies" title="Technologies Used">💻</button>
+                                    <button
+                                        class="overlay-btn play-demo bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="Play Demo" title="Play Video">▶</button>
+                                    <a class="overlay-btn github-link bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        href="https://github.com/lskolhar/complain_hub.git" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Open GitHub" title="GitHub">↗</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card glass-effect rounded-lg overflow-hidden group relative col-span-12 md:col-span-6"
+                            data-title="RepoBrief" data-summary="RepoBrief is a full-stack AI platform built with Next.js, Prisma, PostgreSQL, and Supabase that helps developers understand GitHub repositories. It uses Gemini AI to analyze commits, README files, and repository data to generate summaries and answer questions about the codebase.The platform also provides meeting transcription and summary features using AssemblyAI, where users can upload audio files and get automatic transcripts and summaries. Authentication is handled through Clerk, and users receive credits to access AI features, with additional credits purchasable via Stripe. It is especially useful for onboarding new developers and quickly understanding ongoing projects."
+                            data-tech="Python, Machine Learning, NLP, GitHub API, AssemblyAI, Prisma, PostgreSQL, Supabase, Clerk, Stripe"
+                            data-github="https://github.com/lskolhar/Repobrief.git"
+                            data-video="assets/compressed_screen_recordings/%5Bss%5D%20repobrief.mp4">
+                            <video src="assets/compressed_screen_recordings/%5Bss%5D%20repobrief.mp4" autoplay loop muted
+                                playsinline class="w-full h-56 object-cover"></video>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-200">RepoBrief</h3>
+                                <p class="mt-2 text-gray-400 font-light">An intelligent GitHub repository analyzer that
+                                    provides detailed insights and summaries of code repositories.</p>
+                            </div>
+                            <div
+                                class="project-overlay absolute inset-0 bg-black bg-opacity-60 opacity-0 transition-opacity duration-300">
+                                <div class="overlay-actions absolute top-3 right-3 flex items-center space-x-2">
+                                    <button
+                                        class="overlay-btn view-summary bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Summary" title="Summary">📝</button>
+                                    <button
+                                        class="overlay-btn view-tech bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="View Technologies" title="Technologies Used">💻</button>
+                                    <button
+                                        class="overlay-btn play-demo bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        aria-label="Play Demo" title="Play Video">▶</button>
+                                    <a class="overlay-btn github-link bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors text-white"
+                                        href="https://github.com/lskolhar/Repobrief.git" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Open GitHub" title="GitHub">↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -574,7 +626,7 @@
             <div class="bg-blue-900/60 p-4 border-b border-blue-500/30 flex justify-between items-center">
                 <div class="flex items-center space-x-2">
                     <div class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></div>
-                    <h3 class="text-white font-bold tracking-wide">Lakshmi's AI Agent</h3>
+                    <h3 class="text-white font-bold tracking-wide">Lakshmi's Assistant</h3>
                 </div>
                 <button id="close-chat" class="text-gray-300 hover:text-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -631,23 +683,21 @@
                     d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
             </svg>
         </button>
-    </div>
-
-    <!-- Video Modal -->
-    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
-        <div class="relative max-w-4xl w-full mx-4">
-            <!-- Close Button -->
-            <button id="close-video"
-                class="absolute -top-12 right-0 text-white text-4xl font-bold hover:text-gray-300 transition-colors z-10">
-                &times;
-            </button>
-            <!-- Video Container -->
-            <div class="relative bg-black rounded-lg overflow-hidden">
-                <video id="demo-video" class="w-full h-auto" controls autoplay>
-                    <source src="assets/screen%20recordings/Screen%20Recording%202025-10-05%20130944.mp4"
-                        type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <!-- Video / Text Modal -->
+        <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+            <div class="relative max-w-4xl w-full mx-4">
+                <!-- Close Button -->
+                <button id="close-video"
+                    class="absolute -top-12 right-0 text-white text-4xl font-bold hover:text-gray-300 transition-colors z-10">
+                    &times;
+                </button>
+                <!-- Content Container -->
+                <div id="modal-container" class="relative bg-black rounded-lg overflow-hidden">
+                    <video id="demo-video" class="w-full h-auto" controls autoplay playsinline muted>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
     </div>
