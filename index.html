@@ -311,79 +311,118 @@
             </section>
 
             <!-- Experience Section -->
-            <section id="experience" class="py-24 md:py-32">
-                <h2 class="text-4xl font-bold text-white text-center mb-12">Professional Experience</h2>
-                <div class="max-w-5xl space-y-8 relative">
-                    <!-- Vertical Line -->
-                    <div class="absolute left-4 top-0 h-full w-0.5 bg-blue-400/50"></div>
-                    <div class="pl-12 relative">
-                        <div
-                            class="absolute left-4 top-1 w-4 h-4 rounded-full bg-blue-300 border-2 border-black -translate-x-1/2">
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <img src="assets/logo/omniware.png" alt="Kredo Analytics Logo"
-                                class="w-12 h-12 rounded-md object-contain bg-white/10 p-1"
-                                onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/1a202c?text=KREDO';">
-                            <div class="flex-grow">
-                                <h3 class="text-2xl font-bold text-blue-300">Offline</h3>
-                                <p class="text-lg font-semibold text-white">Omniware technologies pvt ltd</p>
-                                <p class="text-sm text-gray-400 mb-2 font-light">I developed a Laravel-based e-commerce
-                                    system where I implemented a complete payment workflow using the Omniware
-                                    (JSecurePay) gateway. This included order creation, backend signature generation,
-                                    and secure payment verification.</p>
-                                <a href="" target="_blank"
-                                    class="inline-block mt-2 px-3 py-1 text-xs font-semibold border border-purple-400 text-purple-300 rounded-full hover:bg-purple-400 hover:text-black transition-colors">
-                                    currently working here
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Experience 1 -->
-                    <div class="pl-12 relative">
-                        <div
-                            class="absolute left-4 top-1 w-4 h-4 rounded-full bg-blue-300 border-2 border-black -translate-x-1/2">
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <img src="assets/logo/kredo_logo.png" alt="Kredo Analytics Logo"
-                                class="w-12 h-12 rounded-md object-contain bg-white/10 p-1"
-                                onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/1a202c?text=KREDO';">
-                            <div class="flex-grow">
-                                <h3 class="text-2xl font-bold text-blue-300">Offline</h3>
-                                <p class="text-lg font-semibold text-white">Kredo Analytics</p>
-                                <p class="text-sm text-gray-400 mb-2 font-light">Developed full-stack features for a
-                                    real-time project using PHP, Laravel, and MySQL. Additionally, utilized AI models
-                                    like LLAMA3 and MISTRAL for text generation, showcasing adaptability with new
-                                    technologies. </p>
-                                <a href="assets/certificate/kredo%20certificate.pdf" target="_blank"
-                                    class="inline-block mt-2 px-3 py-1 text-xs font-semibold border border-purple-400 text-purple-300 rounded-full hover:bg-purple-400 hover:text-black transition-colors">
-                                    View Certificate
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <section id="experience" class="py-24 md:py-32 relative">
+                <!-- Background decoration -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-                    <!-- Experience 2 -->
-                    <div class="pl-12 relative">
-                        <div
-                            class="absolute left-4 top-1 w-4 h-4 rounded-full bg-blue-300 border-2 border-black -translate-x-1/2">
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <img src="assets/logo/codsoft_logo.png" alt="CodeSoft Logo"
-                                class="w-12 h-12 rounded-md object-contain bg-white/10 p-1"
-                                onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/1a202c?text=CODE';">
-                            <div class="flex-grow">
-                                <h3 class="text-2xl font-bold text-blue-300">Online</h3>
-                                <p class="text-lg font-semibold text-white">CodSoft</p>
-                                <p class="text-sm text-gray-400 mb-2 font-light">Applied full-stack skills using HTML,
-                                    CSS, JavaScript a comprehensive virtual internship in Web Development at CodSoft,
-                                    where I demonstrated key skills through significant contributions to assigned
-                                    projects.</p>
-                                <a href="assets/certificate/codsoft%20certificate.pdf" target="_blank"
-                                    class="inline-block mt-2 px-3 py-1 text-xs font-semibold border border-purple-400 text-purple-300 rounded-full hover:bg-purple-400 hover:text-black transition-colors">
-                                    View Certificate
-                                </a>
+                <div class="flex items-center justify-center mb-16 space-x-4 relative z-10">
+                    <div class="h-px bg-gradient-to-r from-transparent to-blue-500 w-16 md:w-32"></div>
+                    <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300 text-center uppercase tracking-wider">Professional Experience</h2>
+                    <div class="h-px bg-gradient-to-l from-transparent to-blue-500 w-16 md:w-32"></div>
+                </div>
+
+                <div class="max-w-5xl mx-auto px-4 relative z-10">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-8 md:left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-blue-500/50 to-transparent md:-translate-x-1/2"></div>
+                    
+                    <div class="space-y-12">
+                        <!-- Omniware -->
+                        <div class="relative flex flex-col md:flex-row items-center justify-between w-full group">
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-blue-400 border-4 border-[#0a0f1c] md:-translate-x-1/2 group-hover:scale-150 group-hover:bg-purple-400 transition-all duration-300 shadow-[0_0_15px_rgba(96,165,250,0.6)] z-10" style="margin-left: -5px; md:margin-left: 0;"></div>
+                            
+                            <!-- Content left (Blank for spacing on desktop mode, full width on mobile) -->
+                            <div class="hidden md:block md:w-5/12"></div>
+
+                            <!-- Content Right -->
+                            <div class="w-full md:w-5/12 pl-12 md:pl-0">
+                                <div class="glass-effect p-6 rounded-2xl border border-blue-500/20 hover:border-blue-400/60 transition-all duration-300 shadow-xl hover:-translate-y-2 group-hover:shadow-blue-500/20 relative overflow-hidden">
+                                    <div class="absolute top-0 right-0 bg-gradient-to-l from-blue-600/20 to-transparent w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div class="flex items-center space-x-4 mb-4">
+                                        <div class="w-14 h-14 rounded-xl bg-white/10 p-2 border border-white/10 shrink-0">
+                                            <img src="assets/logo/omniware.png" alt="Omniware Logo" class="w-full h-full object-contain" onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/1a202c?text=OMNI';">
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white">Omniware Technologies</h3>
+                                            <p class="text-blue-300 text-sm font-medium">Software Engineer (Offline)</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5 relative z-10">
+                                        Developed a Laravel-based e-commerce system implementing a complete payment workflow using the Omniware (JSecurePay) gateway. Handled order creation, backend signature generation, and secure payment verification.
+                                    </p>
+                                    <div class="flex justify-between items-center relative z-10">
+                                        <span class="px-3 py-1 bg-green-500/20 border border-green-500/30 text-green-400 text-xs rounded-full font-semibold px-4 shadow-[0_0_10px_rgba(34,197,94,0.3)] animate-pulse">Present</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <!-- Kredo Analytics -->
+                        <div class="relative flex flex-col md:flex-row-reverse items-center justify-between w-full group">
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-blue-400 border-4 border-[#0a0f1c] md:-translate-x-1/2 group-hover:scale-150 group-hover:bg-purple-400 transition-all duration-300 shadow-[0_0_15px_rgba(96,165,250,0.6)] z-10" style="margin-left: -5px; md:margin-left: 0;"></div>
+                            
+                            <!-- Content left (Blank spacing) -->
+                            <div class="hidden md:block md:w-5/12"></div>
+
+                            <!-- Content Right (Actually Left side on desktop) -->
+                            <div class="w-full md:w-5/12 pl-12 md:pl-0 md:pr-0 text-left md:text-right">
+                                <div class="glass-effect p-6 rounded-2xl border border-blue-500/20 hover:border-purple-400/60 transition-all duration-300 shadow-xl hover:-translate-y-2 group-hover:shadow-purple-500/20 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 bg-gradient-to-r from-purple-600/20 to-transparent w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div class="flex items-center md:flex-row-reverse space-x-4 md:space-x-0 mb-4">
+                                        <div class="w-14 h-14 rounded-xl bg-white/10 p-2 border border-white/10 shrink-0 md:ml-4">
+                                            <img src="assets/logo/kredo_logo.png" alt="Kredo Analytics Logo" class="w-full h-full object-contain" onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/1a202c?text=KREDO';">
+                                        </div>
+                                        <div class="ml-4 md:ml-0 md:mr-4">
+                                            <h3 class="text-xl font-bold text-white">Kredo Analytics</h3>
+                                            <p class="text-purple-300 text-sm font-medium">Full Stack Role (Offline)</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5 relative z-10">
+                                        Developed full-stack features for a real-time project using PHP, Laravel, and MySQL. Implemented AI models like LLAMA3 and MISTRAL for text generation, demonstrating adaptability with new technologies.
+                                    </p>
+                                    <div class="flex justify-start md:justify-end relative z-10">
+                                        <a href="assets/certificate/kredo%20certificate.pdf" target="_blank" class="inline-flex items-center px-4 py-1.5 bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all group-hover:border-purple-400">
+                                            View Certificate <span class="ml-1 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CodSoft -->
+                        <div class="relative flex flex-col md:flex-row items-center justify-between w-full group">
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-8 md:left-1/2 w-4 h-4 rounded-full bg-blue-400 border-4 border-[#0a0f1c] md:-translate-x-1/2 group-hover:scale-150 group-hover:bg-blue-400 transition-all duration-300 shadow-[0_0_15px_rgba(96,165,250,0.6)] z-10" style="margin-left: -5px; md:margin-left: 0;"></div>
+                            
+                            <!-- Content left (Blank for spacing on desktop mode, full width on mobile) -->
+                            <div class="hidden md:block md:w-5/12"></div>
+
+                            <!-- Content Right -->
+                            <div class="w-full md:w-5/12 pl-12 md:pl-0">
+                                <div class="glass-effect p-6 rounded-2xl border border-blue-500/20 hover:border-blue-400/60 transition-all duration-300 shadow-xl hover:-translate-y-2 group-hover:shadow-blue-500/20 relative overflow-hidden">
+                                     <div class="absolute top-0 right-0 bg-gradient-to-l from-blue-600/20 to-transparent w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                    <div class="flex items-center space-x-4 mb-4">
+                                        <div class="w-14 h-14 rounded-xl bg-white/10 p-2 border border-white/10 shrink-0">
+                                            <img src="assets/logo/codsoft_logo.png" alt="CodeSoft Logo" class="w-full h-full object-contain" onerror="this.onerror=null;this.src='https://placehold.co/48x48/ffffff/1a202c?text=CODE';">
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white">CodSoft</h3>
+                                            <p class="text-blue-300 text-sm font-medium">Virtual Internship (Online)</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-400 text-sm font-light leading-relaxed mb-5 relative z-10">
+                                        Applied full-stack skills using HTML, CSS, JavaScript in a comprehensive virtual internship. Demonstrated mastery in Web Development basics through significant contributions to assigned projects and tasks.
+                                    </p>
+                                    <div class="flex justify-start relative z-10">
+                                        <a href="assets/certificate/codsoft%20certificate.pdf" target="_blank" class="inline-flex items-center px-4 py-1.5 bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all group-hover:border-blue-400">
+                                            View Certificate <span class="ml-1 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
