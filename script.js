@@ -290,8 +290,28 @@ document.addEventListener('DOMContentLoaded', () => {
             response: "Her tech stack is highly versatile! For Backend: Laravel, Node.js, Python, and MySQL. For Frontend: React, Tailwind CSS, JS. She's also very experienced in AI & ML, specifically with NLP, LLMs, and Python. Want to know more about a specific skill?"
         },
         {
-            keywords: ['projects', 'portfolio', 'built', 'freshlyy', 'trackwise', 'repobrief', 'summarize'],
-            response: "Lakshmi has built several impressive projects! Some highlights include 'Freshlyy' (a Laravel e-commerce platform), 'TrackWise' (a management system), and AI-integrations like 'RepoBrief'. Feel free to check the Projects section to watch the live demos!"
+            keywords: ['projects', 'portfolio', 'built', 'all projects', 'what did she build'],
+            response: "Lakshmi has built several impressive projects including Freshlyy, a Book Review System, TrackWise, ComplainHub, and RepoBrief. You can ask me for the 'summary of TrackWise' or any other project to get specific details!"
+        },
+        {
+            keywords: ['freshlyy', 'freshlyy summary', 'ecommerce', 'e-commerce'],
+            response: "Here is the summary for Freshlyy: I developed an e-commerce platform called Freshlyy using the Laravel framework (PHP), where users can purchase dairy products, fresh vegetables, fruits, and meat. The application follows a clean role-based architecture with a single layout and shared routes, where both users and admins interact with the same pages but with different permissions and UI controls. I implemented core features like product listing by category, cart functionality, and order management, along with secure backend logic for admin actions such as adding, editing, and deleting products. The project uses SQLite as the database (managed via TablePlus) and runs on the Herd server. Additionally, I integrated the Omniware (JSecurePay) payment gateway, handling order creation, secure hash generation, and payment status verification to ensure reliable transactions."
+        },
+        {
+            keywords: ['book review system', 'book review', 'book review summary'],
+            response: "Here is the summary for Book Review System: Built a full-stack Book Review Platform using the MERN stack (MongoDB, Express.js, React, Node.js), enabling users to explore, add, and review books. Implemented secure authentication using JWT and bcrypt, along with protected routes for authorized actions. Developed complete CRUD functionality for books and reviews, including pagination and average rating calculation. Designed a responsive frontend using React with seamless API integration following an MVC architecture on the backend."
+        },
+        {
+            keywords: ['trackwise', 'trackwise summary', 'railway'],
+            response: "Here is the summary for TrackWise: TrackWise is an AI-driven railway management system designed to improve railway safety and operational efficiency. The system uses machine learning models such as Echo State Networks (ESN) to predict train movements and a Graph Diffusion Model (GDM) to analyze risk propagation across railway tracks. By combining train data like speed, location, and direction, the AI module calculates a real-time collision risk score and generates alerts to prevent accidents. The platform also integrates AI-based station monitoring, passenger data, and IoT inputs to support predictive decision-making. This AI-enabled approach helps improve safety, optimize railway operations, and enhance passenger management."
+        },
+        {
+            keywords: ['complainhub', 'complain hub', 'complainhub summary', 'complaints'],
+            response: "Here is the summary for ComplainHub: ComplaintHub is a web-based platform developed using React (Frontend) and Firebase (Backend) to manage student complaints efficiently. The system stores complaint data and user details in Firebase. It integrates a machine learning model that predicts the priority of complaints using NLP techniques. The model uses TF-IDF Vectorizer and Naive Bayes classification, trained on custom complaint data collected from students. Complaints are categorized into High (Academic), Medium (Cleanliness), and Low (Unnecessary) priorities. Students can register, submit complaints, and track progress, while admins can manage complaints, upload proofs, and handle student accounts."
+        },
+        {
+            keywords: ['repobrief', 'repo brief', 'repobrief summary', 'github summary'],
+            response: "Here is the summary for RepoBrief: RepoBrief is a full-stack AI platform built with Next.js, Prisma, PostgreSQL, and Supabase that helps developers understand GitHub repositories. It uses Gemini AI to analyze commits, README files, and repository data to generate summaries and answer questions about the codebase. The platform also provides meeting transcription and summary features using AssemblyAI, where users can upload audio files and get automatic transcripts and summaries. Authentication is handled through Clerk, and users receive credits to access AI features, with additional credits purchasable via Stripe. It is especially useful for onboarding new developers and quickly understanding ongoing projects."
         },
         {
             keywords: ['contact', 'hire', 'email', 'linkedin', 'reach', 'message'],
@@ -302,8 +322,16 @@ document.addEventListener('DOMContentLoaded', () => {
             response: "Lakshmi is an aspiring Computer Science student with a strong passion for web development, AI, and cloud technologies. She actively holds leadership roles like Department Coordinator at Vertechx."
         },
         {
-            keywords: ['ai', 'machine learning', 'ml', 'nlp', 'llama', 'model'],
+            keywords: ['ai', 'machine learning', 'ml', 'nlp', 'llama', 'model', 'generative', 'gemini'],
             response: "Lakshmi is an AI Enthusiast! Her AI/ML skills include Python, Machine Learning models (Naive Bayes, TF-IDF), NLP text classification, and integrating LLMs like Gemini and LLaMA 3 via APIs."
+        },
+        {
+            keywords: ['certificate', 'certifications', 'badges', 'nptel', 'credly', 'course', 'courses', 'google cloud', 'ibm', 'deloitte'],
+            response: "She has an extensive collection of certifications! These include Google Cloud Badges (available via her Credly link), NPTEL courses (Software Testing, Waste Mgt), Python for Data Science (IBM), Data Analytics (Deloitte), and various bootcamps from Let's Upgrade and Spoken Tutorials."
+        },
+        {
+            keywords: ['extracurricular', 'activities', 'academic', 'involvement', 'nic', 'sdc', 'club', 'role', 'volunteer', 'vertechx', 'swayam'],
+            response: "Lakshmi is highly active in her college community! She is the Marketing Lead & Design Team Member at NIC (Nova Innovative Compskey), a Social Media Member for SDC, a Department Coordinator for Vertechx, and a Swayam volunteer. Check out the Academic Involvement section for her role certificates!"
         }
     ];
 
